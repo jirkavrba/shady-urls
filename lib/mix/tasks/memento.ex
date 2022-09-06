@@ -15,15 +15,12 @@ defmodule Mix.Tasks.Memento do
     nodes = [node()]
 
     Logger.info("Creating the database schema")
-    Memento.Schema.create(nodes)
 
-    Logger.info("Starting mnesia again")
-    Memento.start()
-
-    Logger.info("Creating the Redirect table")
-    Memento.Table.create(Redirect, disc_copies: nodes)
+    IO.inspect(Memento.stop())
+    IO.inspect(Memento.Schema.create(nodes))
+    IO.inspect(Memento.start())
+    IO.inspect(Memento.Table.create(Redirect, disc_copies: nodes))
 
     Logger.info("Database created")
-
   end
 end
