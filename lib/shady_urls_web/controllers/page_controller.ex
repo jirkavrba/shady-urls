@@ -13,7 +13,7 @@ defmodule ShadyUrlsWeb.PageController do
   def handle(conn, %{ "path" => path }) do
     case Database.lookup_redirect(path) do
       {:ok, redirect} -> redirect(conn, external: redirect)
-      :not_found -> redirect(conn, to: Routes.page_path(ShadyUrlsWeb.Ednpoint, :index))
+      :not_found -> redirect(conn, to: Routes.page_path(ShadyUrlsWeb.Endpoint, :index))
     end
   end
 
