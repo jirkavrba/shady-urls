@@ -1,18 +1,16 @@
-# ShadyUrls
+# Shady URLs
 
-To start your Phoenix server:
+Have you ever felt that your links look serious or just too legit? 
 
-  * Install dependencies with `mix deps.get`
-  * Start Phoenix endpoint with `mix phx.server` or inside IEx with `iex -S mix phx.server`
+Shady URLs allow you to convert normal links into absolute beauties like this one:
 
-Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
+`https://0x4a69726b612.xyz/free_money-39244-dark_net-6b49a-click_here-69916-download-fa6a-paypal.com-e74a.xls.bat`
 
-Ready to run in production? Please [check our deployment guides](https://hexdocs.pm/phoenix/deployment.html).
 
-## Learn more
+# Want to host your own instance?
 
-  * Official website: https://www.phoenixframework.org/
-  * Guides: https://hexdocs.pm/phoenix/overview.html
-  * Docs: https://hexdocs.pm/phoenix
-  * Forum: https://elixirforum.com/c/phoenix-forum
-  * Source: https://github.com/phoenixframework/phoenix
+First of all, why would you want that? 
+
+ Try thinking about it a second time, perhaps going outside, touching the grass.
+
+ If you still want to host the project, install elixir toolchain, run `mix deps.get` and finally start the local dev server `mix phx.server`.
