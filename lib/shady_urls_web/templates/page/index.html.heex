@@ -1,8 +1,11 @@
-<form action={Routes.page_path(ShadyUrlsWeb.Endpoint, :generate)} method="post" class="w-full md:w-4/5 lg:w-3/5 mx-auto p-10 rounded-lg bg-neutral-800">
+.
+<form action={Routes.page_path(ShadyUrlsWeb.Endpoint, :generate)} method="post">
   <input type="hidden" name="_csrf_token" value={ csrf_token_value() }>
 
-  <label for="url" class="uppercase text-sm tracking-widest font-bold">Paste in your <span class="text-amber-500">legit link&#8482;</span> here</label><br/>
-  <input id="url" name="url" class="w-full py-4 px-8 font-mono mt-2 rounded border-4 outline-none transition font-bold bg-neutral-900 border-amber-500 focus:bg-neutral-700 focus:border-white focus:text-white" required placeholder="https://4chan.org/"/><br/>
+  <div class="form-group">
+    <label for="url" class="form-label">Paste in your <strong class="text-primary">legit link&#8482;</strong> here</label><br/>
+    <input id="url" name="url" class="form-control" required placeholder="https://4chan.org/"/><br/>
+  </div>
 
-  <button class="py-4 px-8 mt-4 rounded bg-amber-500 hover:bg-amber-400 focus:bg-amber-400  outline-none uppercase font-black text-sm tracking-widest">Let's make this link a bit more sus</button>
+  <button class="btn btn-primary">Let's make this link a bit more sus</button>
 </form>
