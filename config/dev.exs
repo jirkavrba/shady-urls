@@ -16,7 +16,7 @@ config :shady_urls, ShadyUrlsWeb.Endpoint,
   secret_key_base: "4RWs10jQ2tzMobJ/ElFqent+Y7h+nzt7sIdxO2+DYTmGFGbrAbjh+RjQCmfGep8d",
   watchers: [
     # Start the esbuild watcher by calling Esbuild.install_and_run(:default, args)
-    esbuild: {Esbuild, :install_and_run, [:default, ~w(--sourcemap=inline --watch)]}
+    tailwind: {Tailwind, :install_and_run, [:default, ~w(--watch)]}
   ]
 
 # ## SSL Support
