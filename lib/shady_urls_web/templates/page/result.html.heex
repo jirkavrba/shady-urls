@@ -1,0 +1,11 @@
+<h1 class="text-center text-3xl text-amber-500 font-black">Neat!</h1>
+
+<section class="container mx-auto p-10 rounded-lg bg-neutral-800 mt-10 text-center">
+    <input name="url" class="w-full py-4 px-8 font-mono mt-2 rounded border-4 outline-none transition font-bold bg-neutral-900 border-amber-500 text-center" value={@generated} onClick="this.setSelectionRange(0, this.value.length)"><br/>
+    <div class="font-mono text-6xl my-5 text-neutral-500"> &rarr; </div>
+    <div class="font-mono font-bold text-white"><%= @original  %></div>
+
+    <div class="flex flex-row items-center justify-center mt-10">
+        <a href={Routes.page_path(ShadyUrlsWeb.Endpoint, :index)} class="block py-4 px-8 mt-4 rounded bg-amber-500 hover:bg-amber-400 focus:bg-amber-400  outline-none uppercase font-black text-sm tracking-widest">Shadify another link</a>
+    </div>
+</section>

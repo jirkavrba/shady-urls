@@ -1,5 +1,7 @@
 defmodule ShadyUrlsWeb.PageController do
   use ShadyUrlsWeb, :controller
+
+  alias ShadyUrls.Database
   alias ShadyUrls.Generator
 
   @spec index(Plug.Conn.t(), any) :: Plug.Conn.t()
@@ -9,7 +11,10 @@ defmodule ShadyUrlsWeb.PageController do
 
   @spec handle(Plug.Conn.t(), map) :: Plug.Conn.t()
   def handle(conn, %{ "path" => path }) do
-    redirect(conn, external: "https://google.com/search?q=" <> path)
+    case Database.lookup_redirect(path) do
+      {:ok, redirect} -> redirect(conn, external: redirect)
+      :not_found -> redirect(conn, to: Routes.page_path(ShadyUrlsWeb.Ednpoint, :index))
+    end
   end
 
   @spec generate(Plug.Conn.t(), map) :: Plug.Conn.t()
@@ -17,9 +22,11 @@ defmodule ShadyUrlsWeb.PageController do
     path = Generator.generate_shady_url(url)
     link = Routes.page_url(ShadyUrlsWeb.Endpoint, :handle, path)
 
-    json(conn, %{
-      original: url,
-      shady: link
-    })
+    Database.insert_redirect(path, url)
+
+    conn
+    |> assign(:original, url)
+    |> assign(:generated, link)
+    |> render("result.html")
   end
 end

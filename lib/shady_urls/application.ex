@@ -13,9 +13,10 @@ defmodule ShadyUrls.Application do
       # Start the PubSub system
       {Phoenix.PubSub, name: ShadyUrls.PubSub},
       # Start the Endpoint (http/https)
-      ShadyUrlsWeb.Endpoint
+      ShadyUrlsWeb.Endpoint,
       # Start a worker by calling: ShadyUrls.Worker.start_link(arg)
-      # {ShadyUrls.Worker, arg}
+      # {ShadyUrls.Worker, arg},
+      {ShadyUrls.Database, %{}}
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html
