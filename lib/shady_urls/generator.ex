@@ -11,16 +11,16 @@ defmodule ShadyUrls.Generator do
     "Illegal substances", "Midget porn", "Furry", "420", "Hot moms nearby", "Hot single women",
     "Penis enlargement pills", "Tinder", "~home", "Click Here", "FBI", "CIA", "NSA", "Donald Trump",
     "Android hack", "Malware", "Keylogger", "Root", "Win $100 000 000", "Hidden service", "Tor",
-    "Onion", "Terrorism"
+    "Onion", "Terrorism", "Yiff", "Tesla", "e621.net", "nhentai.net", "Trial version", "Try not to cum", "Challenge"
   ]
 
   @extensions [
     "pdf", "doc", "docx", "xls", "xlsx", "ppt", "pptx",
-    "txt", "bin", "png", "jpg", "gif", "webp"
+    "txt", "bin", "png", "jpg", "gif", "webp", "mp4", "mp3", "ics"
   ]
 
   @ending_extensions [
-    "zip", "rar", "exe", "msi", "jar", "bat"
+    "zip", "rar", "exe", "msi", "jar", "bat", "7z", "ps1"
   ]
 
   @spec generate_shady_url(String.t()) :: String.t()
