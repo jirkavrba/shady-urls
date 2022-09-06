@@ -12,6 +12,7 @@ defmodule ShadyUrlsWeb.PageController do
     redirect(conn, external: "https://google.com/search?q=" <> path)
   end
 
+  @spec generate(Plug.Conn.t(), map) :: Plug.Conn.t()
   def generate(conn, %{ "url" => url }) do
     path = Generator.generate_shady_url(url)
     link = Routes.page_url(ShadyUrlsWeb.Endpoint, :handle, path)
