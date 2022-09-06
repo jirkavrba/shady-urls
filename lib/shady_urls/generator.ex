@@ -31,9 +31,14 @@ defmodule ShadyUrls.Generator do
     :rand.seed(:default, :erlang.phash2(url))
 
     words = select_shady_words()
-    path = Enum.join(words, "-")
     extension = Enum.random(@extensions)
     ending_extension = Enum.random(@ending_extensions)
+
+    path = words
+    |> Enum.map(fn word -> String.downcase(word) end)
+    |> Enum.map(fn word -> String.replace(word, ~r/\s+/, "-") end)
+    |> Enum.map(&generate_random_suffix/1)
+    |> Enum.join("-")
 
     "#{path}.#{extension}.#{ending_extension}"
   end
@@ -43,16 +48,13 @@ defmodule ShadyUrls.Generator do
     @words
     |> Enum.shuffle()
     |> Enum.take(4 + :rand.uniform(2))
-    |> Enum.map(&String.downcase/1)
-    |> Enum.map(&generate_random_suffix/1)
     |> Enum.to_list()
   end
 
   @spec generate_random_suffix(String.t()) :: String.t()
   defp generate_random_suffix(word) when is_binary(word) do
-    suffix =  Stream.iterate(0, fn _ -> :rand.uniform(9) |> to_string() end)
-    |> Enum.take(2 + :rand.uniform(2))
-    |> Enum.join()
+    length = 2 + :rand.uniform(2)
+    suffix = for _ <- 0..length, into: "", do: <<Enum.random('0123456789abcdef')>>
 
     word <> "-" <> suffix
   end
