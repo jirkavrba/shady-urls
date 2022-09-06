@@ -20,7 +20,7 @@ config :logger, level: :info
 # to the previous section and set your `:url` port to 443:
 #
 config :shady_urls, ShadyUrlsWeb.Endpoint,
-  url: [host: "0x4a69726b612.xyz", port: 443]
+  force_ssl: [rewrite_on: [:x_forwarded_proto]]
 #       https: [
 #         ...,
 #         port: 443,
