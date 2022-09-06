@@ -17,7 +17,10 @@ defmodule ShadyUrlsWeb.Router do
   scope "/", ShadyUrlsWeb do
     pipe_through :browser
 
-    get "/", PageController, :index
+    get "/",          PageController, :index
+    get "/:path",     PageController, :handle
+
+    post "/generate", PageController, :generate
   end
 
   # Other scopes may use custom stacks.
