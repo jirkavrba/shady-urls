@@ -23,6 +23,7 @@ defmodule ShadyUrlsWeb.PageController do
 
   @spec generate(Plug.Conn.t(), map) :: Plug.Conn.t()
   def generate(conn, %{ "url" => url }) do
+    url = Generator.normalize_url(url)
     path = Generator.generate_shady_url(url)
     link = Routes.page_url(ShadyUrlsWeb.Endpoint, :handle, path)
 

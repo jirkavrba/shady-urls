@@ -23,12 +23,21 @@ defmodule ShadyUrls.Generator do
     "zip", "rar", "exe", "msi", "jar", "bat", "7z", "ps1"
   ]
 
+  @spec normalize_url(String.t()) :: String.t()
+  def normalize_url(source_url) when is_binary(source_url) do
+    url = source_url
+    |> String.trim()
+    |> String.trim("/")
+    |> String.downcase()
+    |> String.replace(~r/^https?:\/\//, "")
+
+    "https://#{url}"
+  end
+
   @spec generate_shady_url(String.t()) :: String.t()
   def generate_shady_url(source_url) when is_binary(source_url) do
-    url = String.trim_trailing(source_url, "/")
-
     # Seed the PRNG based off the provided source url
-    :rand.seed(:default, :erlang.phash2(url))
+    :rand.seed(:default, :erlang.phash2(source_url))
 
     words = select_shady_words()
     extension = Enum.random(@extensions)
