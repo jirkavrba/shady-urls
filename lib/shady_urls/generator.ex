@@ -2,7 +2,7 @@ defmodule ShadyUrls.Generator do
 
   @words [
     # Thanks to http://urlify.io/ and https://verylegit.link for providing inspiration <3
-    "facebook.com", "amazon.com", "paypal.com", "Win a free iPad", "ISIS registration form", "9/11", "trojan",
+    "facebook.com", "amazon.com", "paypal.com", "Win a free iPad", "ISIS registration form", "Bush did 9 11", "trojan",
     "Trojan.Win32", "Genocide", "KKK", "Ku Klux Klan", "Heroin", "Cocaine", "Meth", "Weed", "Download", "Free",
     "Hentai", "Porn", "weeb", "Twitter Hack", "Facebook Hack", "Crypto", "Bitcoin", "Stolen credit cards",
     "Phishing", "White Power", "Tentacle fun time", "Windows Crack", "Free Money", "Webhost000", "Invoice",
@@ -36,7 +36,7 @@ defmodule ShadyUrls.Generator do
 
     path = words
     |> Enum.map(fn word -> String.downcase(word) end)
-    |> Enum.map(fn word -> String.replace(word, ~r/\s+/, "-") end)
+    |> Enum.map(fn word -> String.replace(word, ~r/\s+/, "_") end)
     |> Enum.map(&generate_random_suffix/1)
     |> Enum.join("-")
 
