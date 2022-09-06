@@ -27,5 +27,7 @@ defmodule Mix.Tasks.Memento do
     Logger.info("Creating the Redirect table")
     Memento.Table.create!(Redirect, disc_copies: nodes)
 
+    Logger.info("Database created")
+
   end
 end
