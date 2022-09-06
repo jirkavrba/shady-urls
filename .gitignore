@@ -32,3 +32,5 @@ shady_urls-*.tar
 npm-debug.log
 /assets/node_modules/
 
+# Mnesia persistence files
+.mnesia

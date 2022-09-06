@@ -44,7 +44,7 @@ defmodule ShadyUrls.MixProject do
       {:telemetry_poller, "~> 1.0"},
       {:jason, "~> 1.2"},
       {:plug_cowboy, "~> 2.5"},
-      {:amnesia, "~> 0.2.8"}
+      {:memento, "~> 0.3.2"}
     ]
   end
 

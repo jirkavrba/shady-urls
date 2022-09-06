@@ -15,7 +15,7 @@ defmodule ShadyUrlsWeb.PageController do
       :not_found -> redirect(conn, to: Routes.page_path(ShadyUrlsWeb.Endpoint, :index))
       {:ok, redirect} ->
         conn
-        |> put_root_layout({ ShadyUrlsWeb.LayoutView, "redirect.html" })
+        |> put_root_layout({ ShadyUrlsWeb.LayoutView, "redirect.html"})
         |> assign(:redirect, redirect)
         |> render("redirect.html")
     end
