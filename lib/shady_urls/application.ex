@@ -16,6 +16,7 @@ defmodule ShadyUrls.Application do
       ShadyUrlsWeb.Endpoint,
       # Start a worker by calling: ShadyUrls.Worker.start_link(arg)
       # {ShadyUrls.Worker, arg},
+      ShadyUrls.Database
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html
