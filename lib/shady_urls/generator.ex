@@ -28,7 +28,6 @@ defmodule ShadyUrls.Generator do
     url = source_url
     |> String.trim()
     |> String.trim("/")
-    |> String.downcase()
     |> String.replace(~r/^https?:\/\//, "")
 
     "https://#{url}"
