@@ -11,7 +11,10 @@ defmodule ShadyUrls.Generator do
     "Illegal substances", "Midget porn", "Furry", "420", "Hot moms nearby", "Hot single women",
     "Penis enlargement pills", "Tinder", "~home", "Click Here", "FBI", "CIA", "NSA", "Donald Trump",
     "Android hack", "Malware", "Keylogger", "Root", "Win $100 000 000", "Hidden service", "Tor",
-    "Onion", "Terrorism", "Yiff", "Tesla", "e621.net", "nhentai.net", "Trial version", "Try not to cum", "Challenge"
+    "Onion", "Terrorism", "Yiff", "Tesla", "e621.net", "nhentai.net", "Trial version", "Try not to cum", "Challenge",
+    "CSGO cheats", "Minecraft", "Minecraft cheat", "Free Minecraft", "Nitro", "Free Nitro", "Steam gift cards",
+    "Google Play gift cards", "Netflix credentials", "Roblox", "Robux", "Free Robux", "Hacked Roblox Client",
+    "Hacked Minecraft Client"
   ]
 
   @extensions [
