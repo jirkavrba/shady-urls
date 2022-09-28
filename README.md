@@ -11,6 +11,6 @@ Shady URLs allow you to convert normal links into absolute beauties like this on
 
 First of all, why would you want that? 
 
- Try thinking about it a second time, perhaps going outside, touching the grass.
+ Try to give it a second thought, perhaps go outside, touch the grass.
 
  If you still want to host the project, install elixir toolchain, run `mix deps.get` and finally start the local dev server `mix phx.server`.
